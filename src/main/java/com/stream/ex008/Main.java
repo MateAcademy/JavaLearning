@@ -10,13 +10,13 @@ import java.util.function.Predicate;
 public class Main {
     public static void main(String[] args) {
 
-        Predicate<Employee> isRich = e -> e.getSalary() > 20000;
-        Predicate<Employee> isRich2 = e -> e.getSalary() > 20000;
-        Predicate<Employee> isEarly = e -> e.getSalary() <= 10000;
+        Predicate<com.stream.ex010.Employee> isRich = e -> e.getSalary() > 20000;
+        Predicate<com.stream.ex010.Employee> isRich2 = e -> e.getSalary() > 20000;
+        Predicate<com.stream.ex010.Employee> isEarly = e -> e.getSalary() <= 10000;
 
-        List<Employee> employees = new ArrayList<>() {{
-            add(new Employee(50000));
-            add(new Employee(70000));
+        List<com.stream.ex010.Employee> employees = new ArrayList<>() {{
+            add(new com.stream.ex010.Employee(50000));
+            add(new com.stream.ex010.Employee(70000));
         }};
 
        // allMatch Возвращает true, если условие выполняется для всех элементов

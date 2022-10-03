@@ -19,9 +19,9 @@ public class Main {
         collection.add("hello,world");
         collection.add("track");
 
-        String[] str = collection.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new);
+        String[] strings = collection.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new);
 
-        System.out.println(Arrays.toString(str));
+        System.out.println(Arrays.toString(strings));
 
         ArrayList<Object> objects = new ArrayList<>();
         //ctrl + alt + v
