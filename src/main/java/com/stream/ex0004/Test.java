@@ -45,11 +45,11 @@ public class Test {
         collection.add(5);
 
 
-        //collection.stream().filter(x->x>=0).forEach(System.out::println);
+        // collection.stream().filter(x->x>=0).forEach(System.out::println);
 
-        //collection.stream().skip(5).forEach(System.out::println);
+        // collection.stream().skip(5).forEach(System.out::println);
 
-        //List<Integer> collect = collection.stream().distinct().collect(Collectors.toList());
+        // List<Integer> collect = collection.stream().distinct().collect(Collectors.toList());
 
         List<String> collect = collection.stream().map(String::valueOf).collect(Collectors.toList());
 

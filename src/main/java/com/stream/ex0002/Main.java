@@ -15,14 +15,13 @@ public class Main {
 
         // Creates predicate
         Predicate<Integer> lesserthan = i -> (i < 18);
-
-        // Calles Predicate method
         System.out.println(lesserthan.test(10));
 
         Function<Integer,String> function = String::valueOf;
         String s = function.apply(10);
 
         Consumer<Integer> consumer = System.out::println;
+        consumer.accept(56);
 
         Supplier<Integer> supplier = ()-> 5;
         System.out.println(supplier.get());

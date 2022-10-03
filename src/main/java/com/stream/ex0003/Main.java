@@ -4,7 +4,7 @@ import java.util.function.IntBinaryOperator;
 
 /**
  * @author Sergey Klunniy
- * а если мне нужна какаято кастомная логика, я всервно придумаю свой?
+ * а если мне нужна какая-то кастомная логика, я всервно придумаю свой?
  */
 public class Main {
     public static void main(String[] args) {
@@ -14,14 +14,10 @@ public class Main {
 
         int i1 = i.applyAsInt(5, 6);
         System.out.println(i1);
-
-
     }
 }
 
 @FunctionalInterface
 interface Test {
     int add(int a, int b);
-
-
 }

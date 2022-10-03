@@ -1,4 +1,4 @@
-package com.stream.ex0005;
+package com.learning.lessons;
 
 interface Executable {
     int executed(int x, int y);
@@ -13,13 +13,15 @@ class Runner {
 }
 
 //Что такое (Integer::sum)?
-public class Test {
+public class Test02 {
     public static void main(String[] args) {
         Runner runner = new Runner();
 
-        int  t = runner.run(Integer::sum);
+        int t = runner.run((x, y) -> 0);
         System.out.println(t);
 
+        int t2 = runner.run(Integer::sum);
+        System.out.println(t2);
     }
 }
 

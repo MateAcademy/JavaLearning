@@ -1,4 +1,4 @@
-package com.stream.ex0005;
+package com.learning.lessons.lesson00;
 
 import java.util.ArrayList;
 import java.util.List;

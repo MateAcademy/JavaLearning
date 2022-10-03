@@ -10,7 +10,5 @@ public class IteratorExz {
     public static void main(String[] args) {
         Stream.iterate(5, t->t++).limit(10).forEach(System.out::println);
         Stream.iterate(5, t->t<10, t->t++).forEach(System.out::println);
-
-
     }
 }
