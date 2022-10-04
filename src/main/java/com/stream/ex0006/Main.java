@@ -3,6 +3,7 @@ package com.stream.ex0006;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Sergey Klunniy
@@ -26,5 +27,16 @@ public class Main {
         ArrayList<Object> objects = new ArrayList<>();
         //ctrl + alt + v
 
+    }
+}
+
+
+class T {
+    public static void main(String[] args) {
+        List<String> collection = new ArrayList<>();
+        collection.add("hello,world");
+        collection.add("track");
+
+        collection.stream().flatMap( t -> (Arrays.stream(t.split(",")).);
     }
 }

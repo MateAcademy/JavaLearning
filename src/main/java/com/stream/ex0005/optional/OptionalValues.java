@@ -2,6 +2,7 @@ package com.stream.ex0005.optional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -13,6 +14,7 @@ public class OptionalValues {
     private static List<Person> people = new ArrayList<>();
 
     static {
+        people.add(new Person("Bill2"));
         people.add(new Person("Bill"));
     }
 
@@ -28,7 +30,8 @@ public class OptionalValues {
 
     public static Optional<Person> getPersonByName(String name) {
         for (Person p : people) {
-            if (p.getName().equals(name)) {
+//            if (p.getName().equals(name)) {
+            if (Objects.equals(p.getName(), name)) {
                 return Optional.of(p);
             }
         }

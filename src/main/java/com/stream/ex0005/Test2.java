@@ -18,7 +18,6 @@ public class Test2 {
             add(new People("Nika", 10));
         }};
 
-
         System.out.println(peopleList.stream().map(t -> t.getAge()).filter(y -> y > 18).count());
 
         double d = peopleList.stream().filter(p->p.getAge()>=18).mapToInt(People::getAge)

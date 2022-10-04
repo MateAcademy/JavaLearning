@@ -4,16 +4,17 @@ import java.util.function.IntBinaryOperator;
 
 /**
  * @author Sergey Klunniy
- * а если мне нужна какая-то кастомная логика, я всервно придумаю свой?
+ * а если мне нужна какая-то кастомная логика, я всеравно придумаю свой?
+ * TODO: например что можно придумать?
  */
 public class Main {
     public static void main(String[] args) {
         // (a, b)- > a+b;
-        // вот здесь мы именно обращаемся к классу интежер, вызываем статический метод
+        // вот здесь мы именно обращаемся к классу Integer, вызываем статический метод
         IntBinaryOperator i = Integer::sum;
 
-        int i1 = i.applyAsInt(5, 6);
-        System.out.println(i1);
+        int result = i.applyAsInt(5, 6);
+        System.out.println(result);
     }
 }
 

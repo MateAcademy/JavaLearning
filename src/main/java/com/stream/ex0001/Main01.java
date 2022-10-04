@@ -16,14 +16,14 @@ public class Main01 {
 
         /**
          * konveernue
-         * map, filter, disctinct(удаляет дубликаты), parallel(мы можем создавать еще паралельные потоки
-         * к примеру мы можем с обычного состояния перейти в паралельный сделать какуюто операцию паралельно и вернуться к обычному состоянию),
+         * map, filter, disctinct(удаляет дубликаты), parallel(мы можем создавать еще параллельные потоки
+         * к примеру мы можем с обычного состояния перейти в параллельный сделать какую то операцию параллельно и вернуться к обычному состоянию),
          * flatMap(это когда есть возможность создать из одного элемента несколько элементов)
          * skip - пропустить несколько значений, например у нас генератор случайных значений, limit
          *
          * siquential -последовательные потоки
          *
-         * flatMap это когда мы из дного
+         * flatMap похоже на map, но может создавать из одного элемента несколько
          *
          *
          * terminalnue:
@@ -33,10 +33,10 @@ public class Main01 {
          *      toList
          *      min/max/summ/count, matcher(anyMatch, allMatch)
          *      findFirst, findAny
-         *      iterator - генерирует бесконечний поток
+         *      iterator - генерирует бесконечный поток
          */
 
-        List<Integer> collect = Arrays.asList(10, -20, 30, 40, 50)
+        List<Integer> collect = Arrays.asList(10, -20, 30, 30, 50)
                 .stream()
                 .distinct()
                 .sorted()
@@ -58,8 +58,7 @@ public class Main01 {
                 .add(30)
                 .build();
 
+//TODO: где и как применимо?
         IntStream chars = "Hello".chars();
-
     }
-
 }

@@ -10,14 +10,14 @@ import java.util.stream.Collectors;
 public class Test {
 
     static List<Integer> collection2 = new ArrayList<>() {
-
+//Вопрос, почему нельзя статик подставить?
 //я пытаюсь вызвать внутри стат класса не статический метод
 //на момент инициализации статического класса еще не будет ссылки add
 //компилятор еще не будет знать что такое add
 
         //можем протестировать что быстрее лямбда или анонимный класс
        // static {
-{
+        {
             add(4);
             add(-2);
             add(-2);
@@ -51,8 +51,9 @@ public class Test {
 
         // List<Integer> collect = collection.stream().distinct().collect(Collectors.toList());
 
+        //map - преобразует каждый элемент стрима
         List<String> collect = collection.stream().map(String::valueOf).collect(Collectors.toList());
 
-        //что такое коллект?
+        //что такое метод коллект?
     }
 }
