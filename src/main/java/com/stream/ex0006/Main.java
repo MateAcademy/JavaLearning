@@ -37,6 +37,6 @@ class T {
         collection.add("hello,world");
         collection.add("track");
 
-        collection.stream().flatMap( t -> (Arrays.stream(t.split(",")).);
+        //collection.stream().flatMap( t -> (Arrays.stream(t.split(",")).);
     }
 }
