@@ -20,16 +20,15 @@ public class Main {
         collection.add("hello,world");
         collection.add("track");
 
+//todo: а без слова stream что возвращается?
         String[] strings = collection.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new);
 
         System.out.println(Arrays.toString(strings));
 
         ArrayList<Object> objects = new ArrayList<>();
         //ctrl + alt + v
-
     }
 }
-
 
 class T {
     public static void main(String[] args) {
@@ -37,6 +36,10 @@ class T {
         collection.add("hello,world");
         collection.add("track");
 
-        //collection.stream().flatMap( t -> (Arrays.stream(t.split(",")).);
+        //map - Преобразует каждый элемент стрима
+
+        //flatMap - Похоже на map, но может создавать из одного элемента несколько
+        List<String> collect = collection.stream().flatMap(t -> (Arrays.stream(t.split(",")))).collect(Collectors.toList());
+        System.out.println(collect);
     }
 }

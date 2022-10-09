@@ -1,35 +1,25 @@
-package com.stream.ex0005;
+package com.stream.questions_test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  Задача, сколько у нас людей с возрастом больше 18ти?
- *  Задача 2: вывеси средний возраст людей больше 18ти?
- *  Что такое поджо обьект?
+ * @author Sergey Klunniy
  */
-public class Test2 {
+public class T {
     public static void main(String[] args) {
         List<People> peopleList = new ArrayList<>() {{
             add(new People("Sergey", 15));
             add(new People("Alex", 19));
-            add(new People("Maria", 22));
+            add(new People("Maria", 30));
             add(new People("Alla", 30));
             add(new People("Nika", 10));
         }};
 
-// Задача, сколько у нас людей с возрастом больше 18ти?
-        long count = peopleList.stream().filter(t -> t.getAge() > 20).count();
-        System.out.println(count);
+        //вывеси средний возраст людей больше 18ти?
+        double asDouble = peopleList.stream().mapToInt(t -> t.getAge()).filter(age -> age > 20).average().getAsDouble();
+        System.out.println(asDouble);
 
-        System.out.println(peopleList.stream().map(t -> t.getAge()).filter(y -> y > 18).count());
-
-//todo:
-// вывеси средний возраст людей больше 18ти?
-        double d = peopleList.stream().filter(p->p.getAge()>=18).mapToInt(People::getAge)
-                .average().getAsDouble();
-
-        System.out.println(d);
     }
 }
 

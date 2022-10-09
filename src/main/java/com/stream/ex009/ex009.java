@@ -30,7 +30,6 @@ public class ex009 {
         employees.stream().map(Employee::getName).forEach(System.out::print);
         System.out.println();
         employees.stream().map(Employee::getAge).forEach(System.out::print);
-
     }
 }
 

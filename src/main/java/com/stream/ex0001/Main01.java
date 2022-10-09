@@ -1,6 +1,5 @@
 package com.stream.ex0001;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,7 +10,7 @@ import java.util.stream.Stream;
  * Способы создания стримов: Arrays.asList, из значений, из коллекций и из массива.
  * Задача, отсортировать эти значения, убрать дубликаты и вывести на экране содержимое?
  */
-public class Main01 {
+public class    Main01 {
     public static void main(String[] args) {
 
         /**

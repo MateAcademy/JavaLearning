@@ -38,10 +38,22 @@ public class Main {
 
 //я вернул лист средних значений отсортированных по возрастающей
 //начиная с флетмэп что я у каждого опратора беру на вход и что получаю на выход?
-        List groupList2 = groupList.stream().flatMap(t-> Arrays.stream(t.getStudents()))
-                .map(o-> Arrays.stream(o.getMarks()).average().getAsDouble())
-                .sorted((o1, o2) -> (int) (o1 - o2))
-                .collect(Collectors.toList());
+
+//        List groupList2 = groupList.stream().map(t-> t.getStudents()) //
+//                .map(o-> Arrays.stream(o.getMarks()).average().getAsDouble())
+//                .sorted((o1, o2) -> (int) (o1 - o2))
+//                .collect(Collectors.toList());
+
+
+//        List groupList2 = groupList.stream().flatMap(t-> Arrays.stream(t.getStudents()))
+//                .map(o-> Arrays.stream(o.getMarks()).average().getAsDouble())
+//                .sorted((o1, o2) -> (int) (o1 - o2))
+//                .collect(Collectors.toList());
+
+//                List groupList2 = groupList.stream().flatMap(t-> Arrays.stream(t.getStudents()))
+//                .map(o-> Arrays.stream(o.getMarks()).average().getAsDouble())
+//                .sorted((o1, o2) -> (int) (o1 - o2))
+//                .collect(Collectors.toList());
 
 //а могу ли я вернуть массив студентов? какую композицию ты хочешь получить?
 //какой из операторов мне опдойдет, что бы принимал студентов, сортировал и отдавал их
@@ -55,7 +67,7 @@ public class Main {
 //                        )).collect(Collectors.toList());
 
       // Arrays.stream(marks).mapToObj(Integer::valueOf).mapToInt(Integer::intValue).average().getAsDouble()
-        System.out.println(groupList2);
+//        System.out.println(groupList2);
 
 
         //collection.stream().mapToInt((s) -> Integer.parseInt(s)).average()

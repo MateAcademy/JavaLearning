@@ -22,3 +22,4 @@ public class Main {
 interface Test {
     int add(int a, int b);
 }
+
