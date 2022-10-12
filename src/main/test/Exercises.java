@@ -23,7 +23,7 @@ import static org.junit.Assert.assertFalse;
  */
 public class Exercises {
 
-// Exercise 1: Print out all the words in wordList, which is
+    // Exercise 1: Print out all the words in wordList, which is
 // a static List<String> defined at the bottom of this file.
     @Test
     @Disabled
@@ -31,7 +31,7 @@ public class Exercises {
         wordList.forEach(System.out::println);
     }
 
-// Exercise 2: Convert all worlds in worldList to upper case,
+    // Exercise 2: Convert all worlds in worldList to upper case,
 // and gather the result into an output list
     @Test
     @Disabled
@@ -43,11 +43,11 @@ public class Exercises {
         assertEquals(
                 Arrays.asList("EVERY", "PROBLEM", "IN", "COMPUTER",
                         "SCIENCE", "CAN", "BE", "SOLVED", "BY", "ADDING",
-                        "ANOTHER", "LEVEL", "OF", "INDIRECTION"),
+                        "ANOTHER", "LEVEL", "OF", "INDIRECTION" ),
                 output);
     }
 
-// Exercise 3: Fined all the words in wordList that have even length
+    // Exercise 3: Fined all the words in wordList that have even length
 // and put them into an output list.
     @Test
     @Disabled
@@ -56,11 +56,11 @@ public class Exercises {
                 .filter(t -> t.length() % 2 == 0).collect(Collectors.toList());
 
         assertEquals(
-                Arrays.asList("in", "computer", "be", "solved", "by", "adding", "of"),
+                Arrays.asList("in", "computer", "be", "solved", "by", "adding", "of" ),
                 output);
     }
 
-// Exercise 4: Count the number of lines in a file. The field *reader*
+    // Exercise 4: Count the number of lines in a file. The field *reader*
 // is a BufferedReader which will be opened for you on the text file.
 // See the JUnit @Before and @After methods at the bottom of this file.
 // The text file is "SonnetI.txt" (Shakespeare's first sonnet) which is
@@ -72,20 +72,22 @@ public class Exercises {
         assertEquals(14, count);
     }
 
-// Exercise 5: Join lines 3-4 from the text file into a single string.
-    @Test @Disabled
+    // Exercise 5: Join lines 3-4 from the text file into a single string.
+    @Test
+    @Disabled
     public void joinLineRange() throws IOException {
         String output = reader.lines().skip(2).limit(2).collect(Collectors.joining());
 
         assertEquals(
                 "But as the riper should by time decease,"
-                + "His tender heir might bear his memory;",
+                        + "His tender heir might bear his memory;",
                 output);
     }
 
 // Exercise 6: Fined the length of the longest line in the file
 
-    @Test @Disabled
+    @Test
+    @Disabled
     public void lengthOfLongestLine() throws IOException {
         int longest = reader.lines().map(String::length).max(Comparator.comparingInt(o -> o)).get();
 //        int longest = reader.lines().mapToInt(String::length).max().getAsInt();
@@ -93,13 +95,31 @@ public class Exercises {
     }
 
 
-    // 7.
+// 7. Collect all the words from the text file into a list
+// Hint: use String.split(REGEXP) to split a string into words.
+// Splitting this way results in "words" that are the empty string,
+// which should be discarded. REGEX is defined at the bottom of this file
+// собрать все слова текста в список
+    @Test @Disabled
     public void listOfAllWords() throws IOException {
-        List<String> output = null;
+        List<String> output = reader.lines().flatMap(t -> Arrays.stream(t.split(REGEXP))).collect(Collectors.toList());
 
         assertEquals(
                 Arrays.asList(
-                        "FROM", "fairest", "creatures", " we"
+                        "From", "fairest", "creatures", " we", "desire", "increase",
+                        "That", "thereby", "beauty", "s", "rose", "might", "never", "die",
+                        "But", "as", "the", "riper", "should", "by", "time", "decease",
+                        "His", "tender", "heir", "might", "bear", "his", "memory",
+                        "But", "thou", "contracted", "to", "thine", "own", "bright", "eyes",
+                        "Feed’st", "thy", "light’s", "flame", "with", "self-substantial", "fuel",
+                        "Making", "a", "famine", "where", "abundance", "lies",
+                        "Thyself", "thy", "foe", "to", "thy", "sweet", "self", "too", "cruel",
+                        "Thou", "that", "art", "now", "the", "world’s", "fresh", "ornament",
+                        "And", "only", "herald", "to", "the", "gaudy", "spring",
+                        "Within", "thine", "own", "bud", "buriest", "thy", "content",
+                        "And", "tender", "churl", "mak’st", "waste", "in", "niggarding",
+                        "Pity", "the", "world", "or", "else", "this", "glutton", "be",
+                        "To", "eat", "the", "world’s", "due", "by", "the", "grave", "and", "thee"
                 ), output);
     }
 
@@ -132,10 +152,10 @@ public class Exercises {
         Map<Integer, List<String>> map = null;
 
         assertEquals(6, map.get(7).size());
-        assertEquals(Arrays.asList("increase", "ornament"), map.get(8));
-        assertEquals(Arrays.asList("creatures", "abundance"), map.get(9));
-        assertEquals(Arrays.asList("contracted", "niggarding"), map.get(10));
-        assertEquals(Arrays.asList("substantial"), map.get(11));
+        assertEquals(Arrays.asList("increase", "ornament" ), map.get(8));
+        assertEquals(Arrays.asList("creatures", "abundance" ), map.get(9));
+        assertEquals(Arrays.asList("contracted", "niggarding" ), map.get(10));
+        assertEquals(Arrays.asList("substantial" ), map.get(11));
         assertFalse(map.containsKey(12));
     }
 
@@ -144,7 +164,7 @@ public class Exercises {
     static List<String> wordList = Arrays.asList(
             "every", "problem", "in", "computer", "science",
             "can", "be", "solved", "by", "adding", "another",
-            "level", "of", "indirection");
+            "level", "of", "indirection" );
 
     static final String REGEXP = "\\W+";
 
@@ -153,7 +173,7 @@ public class Exercises {
     @Before
     public void setUpBufferedReader() throws IOException {
         reader = Files.newBufferedReader(
-                Paths.get("E:\\java-programms\\JavaLerning\\JavaLerning\\SonnetI.txt"), StandardCharsets.UTF_8);
+                Paths.get("E:\\java-programms\\JavaLerning\\JavaLerning\\SonnetI.txt" ), StandardCharsets.UTF_8);
     }
 
 
